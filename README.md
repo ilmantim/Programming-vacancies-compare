@@ -40,11 +40,11 @@ python salary_analysis.py
 ```
 Then you see the code execution: 
 
-![Alt text](image.png)
+![image](https://github.com/ilmantim/Programming-vacancies-compare/assets/134302217/744ca6d6-7062-4c33-a600-fd3515662ce8)
 
 And finally a result:
 
-![Alt text](image-1.png)
+![image](https://github.com/ilmantim/Programming-vacancies-compare/assets/134302217/4bcd2317-2ef6-4c5a-a6eb-2f19aae93709)
 
 ## Project Goals
 The code is written for educational purposes on online-course for web-developers, dvmn.org.
