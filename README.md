@@ -29,7 +29,7 @@ Add the following environment variables:
 ```bash
 SUPERJOB_API_KEY=YOUR_SUPERJOB_API_KEY
 ```
-Replace YOUR_SUPERJOB_API_KEY with your SuperJib API Key
+Replace YOUR_SUPERJOB_API_KEY with your SuperJob API Key
 
 ## How to run Script
 
