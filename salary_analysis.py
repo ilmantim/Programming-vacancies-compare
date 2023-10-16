@@ -4,6 +4,11 @@ import requests
 from datetime import datetime, timedelta
 from terminaltables import AsciiTable
 
+HH_MOSCOW_CODE = '1'
+SJ_MOSCOW_CODE = 4
+SJ_IT_CATALOGUE_CODE = 48
+RESULTS_PER_PAGE = 100
+
 
 def predict_salary(salary_from, salary_to):
     if salary_from and salary_to:
@@ -54,7 +59,7 @@ def get_hh_statistics(programming_languages):
         while page < pages_number:
             params = {
                 'text': language,
-                'area': '1',
+                'area': HH_MOSCOW_CODE,
                 'date_from': date_from,
                 'page': page
             }
@@ -106,12 +111,12 @@ def get_sj_statistics(programming_languages, superjob_api_key):
             }
 
             params = {
-                'town': 4,
-                'catalogues': 48,
+                'town': SJ_MOSCOW_CODE,
+                'catalogues': SJ_IT_CATALOGUE_CODE,
                 'keyword': language,
                 'date_published_from': date_from_unix,
                 'page': page,
-                'count': 100
+                'count': RESULTS_PER_PAGE
             }
 
             response = requests.get(url, headers=headers, params=params)
