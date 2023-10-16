@@ -79,11 +79,11 @@ def get_hh_statistics(programming_languages):
         if estimated_salaries:
             average_salary = int(sum(estimated_salaries) / len(estimated_salaries))
 
-            language_statistics[language] = {
-                "vacancies_found": vacancies['found'],
-                "vacancies_processed": len(estimated_salaries),
-                "average_salary": average_salary
-            }
+        language_statistics[language] = {
+            "vacancies_found": vacancies['found'],
+            "vacancies_processed": len(estimated_salaries),
+            "average_salary": average_salary
+        }
 
     return language_statistics
 
@@ -133,11 +133,14 @@ def get_sj_statistics(programming_languages):
         if estimated_salaries:
             average_salary = int(sum(estimated_salaries) / len(estimated_salaries))
 
-            language_statistics[language] = {
-                "vacancies_found": vacancies_data['total'],
-                "vacancies_processed": len(estimated_salaries),
-                "average_salary": average_salary
-            }
+        else:
+            average_salary = 0 
+
+        language_statistics[language] = {
+            "vacancies_found": vacancies_data['total'],
+            "vacancies_processed": len(estimated_salaries),
+            "average_salary": average_salary
+        }
 
     return language_statistics
 
