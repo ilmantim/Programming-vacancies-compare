@@ -157,15 +157,18 @@ def display_statistics_table(statistics, title):
     print(table.table)
 
 
-if __name__ == '__main__':
+def main():
     load_dotenv()
     superjob_api_key = os.getenv('SUPERJOB_API_KEY')
 
     programming_languages = ['Python', 'Java', 'JavaScript', 'Ruby', 'PHP', 'C++', 'C#', 'C', 'Go']
 
     language_statistics_hh = get_hh_statistics(programming_languages)
-
     language_statistics_sj = get_sj_statistics(programming_languages)
 
     display_statistics_table(language_statistics_hh, 'HeadHunter Moscow')
     display_statistics_table(language_statistics_sj, 'SuperJob Moscow')
+
+
+if __name__ == '__main__':
+    main()
