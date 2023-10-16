@@ -88,7 +88,7 @@ def get_hh_statistics(programming_languages):
     return language_statistics
 
 
-def get_sj_statistics(programming_languages):  
+def get_sj_statistics(programming_languages, superjob_api_key):  
     url = 'https://api.superjob.ru/2.0/vacancies'
     one_month_ago = datetime.now() - timedelta(days=30)
     date_from_unix = int(one_month_ago.timestamp())
@@ -167,7 +167,7 @@ def main():
     programming_languages = ['Python', 'Java', 'JavaScript', 'Ruby', 'PHP', 'C++', 'C#', 'C', 'Go']
 
     language_statistics_hh = get_hh_statistics(programming_languages)
-    language_statistics_sj = get_sj_statistics(programming_languages)
+    language_statistics_sj = get_sj_statistics(programming_languages, superjob_api_key)
 
     display_statistics_table(language_statistics_hh, 'HeadHunter Moscow')
     display_statistics_table(language_statistics_sj, 'SuperJob Moscow')
