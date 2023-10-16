@@ -102,7 +102,7 @@ def get_sj_statistics(programming_languages):
 
         while page < 5:
             headers = {
-                'X-Api-App-Id': SUPERJOB_API_KEY
+                'X-Api-App-Id': superjob_api_key
             }
 
             params = {
@@ -159,7 +159,7 @@ def display_statistics_table(statistics, title):
 
 if __name__ == '__main__':
     load_dotenv()
-    SUPERJOB_API_KEY = os.getenv('SUPERJOB_API_KEY')
+    superjob_api_key = os.getenv('SUPERJOB_API_KEY')
 
     programming_languages = ['Python', 'Java', 'JavaScript', 'Ruby', 'PHP', 'C++', 'C#', 'C', 'Go']
 
