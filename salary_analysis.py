@@ -67,7 +67,6 @@ def get_hh_statistics(programming_languages):
             response = requests.get(url, params=params)
             response.raise_for_status()
 
-            # Parse the JSON response
             vacancies = response.json()
 
             print(f"Downloading {language} - Page {page + 1}")
