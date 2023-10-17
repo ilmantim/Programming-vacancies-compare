@@ -4,6 +4,7 @@ import requests
 from datetime import datetime, timedelta
 from terminaltables import AsciiTable
 
+
 HH_MOSCOW_CODE = '1'
 SJ_MOSCOW_CODE = 4
 SJ_IT_CATALOGUE_CODE = 48
@@ -121,13 +122,13 @@ def get_sj_statistics(programming_languages, superjob_api_key):
             response = requests.get(url, headers=headers, params=params)
             response.raise_for_status()
 
-            vacancies_data = response.json()
+            jobs = response.json()
 
             print(f"Downloading {language} - Page {page + 1}")
 
             page += 1
 
-            vacancies = vacancies_data['objects']
+            vacancies = jobs['objects']
 
             for vacancy in vacancies:
                 estimated_salary = predict_rub_salary_sj(vacancy)
@@ -141,7 +142,7 @@ def get_sj_statistics(programming_languages, superjob_api_key):
             average_salary = 0 
 
         language_statistics[language] = {
-            "vacancies_found": vacancies_data['total'],
+            "vacancies_found": jobs['total'],
             "vacancies_processed": len(estimated_salaries),
             "average_salary": average_salary
         }
