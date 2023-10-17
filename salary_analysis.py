@@ -84,6 +84,9 @@ def get_hh_statistics(programming_languages):
         if estimated_salaries:
             average_salary = int(sum(estimated_salaries) / len(estimated_salaries))
 
+        else:
+            average_salary = 0 
+
         language_statistics[language] = {
             "vacancies_found": vacancies['found'],
             "vacancies_processed": len(estimated_salaries),
